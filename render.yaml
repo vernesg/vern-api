@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: vern-rest-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars: []
+    autoDeploy: true
