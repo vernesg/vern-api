@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🧠 Vern Image Generator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: black;
+      color: #0ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+      background-image: radial-gradient(ellipse at center, #000 0%, #111 100%);
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    .container {
+      background: #111;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px #0ff;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: #0ff;
+      font-size: 16px;
+      box-shadow: 0 0 10px #0ff inset;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #0ff;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0ff;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #0cc;
+    }
+
+    img {
+      margin-top: 30px;
+      max-width: 100%;
+      border: 3px solid #0ff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Vern Image Generator</h1>
+  <div class="container">
+    <input type="text" id="textInput" placeholder="Enter your custom message..." />
+    <button onclick="generateImage()">Generate</button>
+    <div id="resultArea"></div>
+  </div>
+
+  <script>
+    function generateImage() {
+      const text = document.getElementById("textInput").value.trim();
+      const resultArea = document.getElementById("resultArea");
+
+      if (!text) {
+        alert("Please enter some text.");
+        return;
+      }
+
+      const url = `/vern?text=${encodeURIComponent(text)}`;
+      resultArea.innerHTML = `<img src="${url}" alt="Generated Image" />`;
+    }
+  </script>
+</body>
+</html>
