@@ -1,7 +1,6 @@
 {
   "name": "vern-rest-api",
   "version": "1.0.0",
-  "description": "Custom image API using canvas",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
