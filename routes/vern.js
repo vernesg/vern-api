@@ -28,7 +28,7 @@ async function onStart({ req, res }) {
     const canvas = createCanvas(width, height);
     const ctx = canvas.getContext("2d");
 
-    const backgroundUrl = "https://i.ibb.co/0yYtkDsx/517987164-2462247384160187-5794400419543583610-n-jpg-stp-dst-jpg-p480x480-tt6-nc-cat-105-ccb-1-7-nc.jpg";
+    const backgroundUrl = "https://i.ibb.co/4wpSssTt/518003935-1750673682216923-3507286462968653534-n-jpg-stp-dst-jpg-p480x480-tt6-nc-cat-101-ccb-1-7-nc.jpg";
     const background = await loadImage(backgroundUrl);
     ctx.drawImage(background, 0, 0, width, height);
 
